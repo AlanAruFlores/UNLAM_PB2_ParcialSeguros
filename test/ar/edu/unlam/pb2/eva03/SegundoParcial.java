@@ -64,10 +64,9 @@ public class SegundoParcial {
 		assertEquals(PREMIO, poliza.getPremio());
 	}
 	
-	/*
+	
 	@Test
 	public void queSePuedanAdministrarDistintosTiposDePolizas() {
-		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 	
 		libra.agregarPoliza(new PolizaDeAuto(1, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0));
@@ -77,25 +76,25 @@ public class SegundoParcial {
 		libra.agregarPoliza(new PolizaDeAuto(4, new Persona("Victor", 652354, 24), 2000000.0, 5000.0));
 		
 		
-		assertEquals((Integer)4, libra.obtenerLaCantidadDePolizasEmitidas);
+		assertEquals((Integer)4, libra.obtenerLaCantidadDePolizasEmitidas());
 	}
 
 	
 	@Test
-	public void queSePuedaDenunciarElRoboDeUnAuto() {
+	public void queSePuedaDenunciarElRoboDeUnAuto() throws PolizaInexistente {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 	
-		libra.agregarPoliza(new PolizaDeAuto(numeroDePoliza, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0);
+		libra.agregarPoliza(new PolizaDeAuto(numeroDePoliza, new Persona("Camila", 45987345, 24), 2000000.0, 5000.0));
 		
 		libra.denunciarSiniestro(1);
 		
-		assertTrue(libra.getPoliza(1).fueRobado());
+		assertTrue(((PolizaDeAuto)libra.getPoliza(1)).getFueRobado());
 		
 	}
 	
 	@Test
-	public void queSePuedaDenunciarUnSiniestroParaUnaPolizaDeVida) {
+	public void queSePuedaDenunciarUnSiniestroParaUnaPolizaDeVida() throws PolizaInexistente {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");
 	
@@ -103,11 +102,11 @@ public class SegundoParcial {
 		
 		libra.denunciarSiniestro(1);
 		
-		assertTrue(libra.getPoliza(1).tuvoAlgunAccidente());
+		assertTrue(((PolizaAccidentesPersonales)libra.getPoliza(1)).tuvoAlgunAccidente());
 		
 	}
 	
-	@Test (expected = PolizaInexistente.class)
+	/*@Test (expected = PolizaInexistente.class)
 	public void verificarQueNoSePuedaDenunciarUnSiniestroParaUnaPolizaQueNoExista() {
 		Integer numeroDePoliza = 1;
 		CompaniaDeSeguro libra = new CompaniaDeSeguro("Libra");

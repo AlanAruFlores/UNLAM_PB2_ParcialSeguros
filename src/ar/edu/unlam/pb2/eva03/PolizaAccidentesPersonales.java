@@ -5,11 +5,14 @@ import java.util.List;
 
 public class PolizaAccidentesPersonales extends Poliza implements SegurosDeVida {
 
-	private List<Persona> personaAseguradas; 
+	private List<Persona> personaAseguradas;
+	private Boolean tuvoAccidente; 
+	
 	public PolizaAccidentesPersonales(Integer numeroPoliza, Persona asegurado, Double sumaAsegurada, Double prima) {
 		super(numeroPoliza, asegurado, sumaAsegurada, prima);
 		this.personaAseguradas = new ArrayList<Persona>();
 	}
+	
 	@Override
 	public void agregarBeneficiario(Persona persona, TipoDeBeneficiario tipo) {
 		persona.setTipo(tipo);
@@ -18,6 +21,13 @@ public class PolizaAccidentesPersonales extends Poliza implements SegurosDeVida 
 	
 	public Integer obtenerCantidadDeBeneficiarios() {
 		return this.personaAseguradas.size();
+	}
+	
+	public void setTuvoAccidente(Boolean valor) {
+		this.tuvoAccidente =valor;
+	}
+	public Boolean tuvoAlgunAccidente() {
+		return this.tuvoAccidente;
 	}
 
 }

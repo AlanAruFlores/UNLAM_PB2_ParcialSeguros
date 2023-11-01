@@ -1,5 +1,7 @@
 package ar.edu.unlam.pb2.eva03;
 
+import java.util.Objects;
+
 public abstract class Poliza {
 	private Integer numeroPoliza;
 	private Persona asegurado;
@@ -61,6 +63,21 @@ public abstract class Poliza {
 
 	public void setPrima(Double prima) {
 		this.prima = prima;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(numeroPoliza);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		Poliza other = (Poliza) obj;
+		return Objects.equals(numeroPoliza, other.numeroPoliza);
 	}
 	
 	
