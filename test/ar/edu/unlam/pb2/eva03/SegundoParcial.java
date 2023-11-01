@@ -4,6 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/*
+ * PARCIAL PB2 ALAN NAHUEL ARUQUIPA FLORES | DNI: 45323639
+ * 
+ * */
 public class SegundoParcial {
 
 	@Test
