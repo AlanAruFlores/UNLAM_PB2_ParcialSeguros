@@ -12,6 +12,7 @@ public class PolizaAccidentesPersonales extends Poliza implements SegurosDeVida 
 	}
 	@Override
 	public void agregarBeneficiario(Persona persona, TipoDeBeneficiario tipo) {
+		persona.setTipo(tipo);
 		this.personaAseguradas.add(persona);
 	}
 	

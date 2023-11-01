@@ -8,8 +8,8 @@ public class PolizaDeAuto extends Poliza implements SegurosGenerales {
 	}
 
 	@Override
-	public void agregarBienAsegurado(Auto auto) {
-		this.auto = auto;
+	public void agregarBienAsegurado(Bien auto) {
+		this.auto = ((Auto)auto);
 	}
 
 	public Auto getAuto() {
