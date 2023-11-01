@@ -21,7 +21,7 @@ public class SegundoParcial {
 		assertEquals(asegurado, ((PolizaDeAuto)poliza).getAsegurado());
 		assertEquals(PREMIO, ((PolizaDeAuto)poliza).getPremio());
 	}
-	/*
+	
 	@Test
 	public void queSePuedaEmitirUnaPolizaDeVida() {
 		final Integer NUMERO_DE_POLIZA = 1;
@@ -35,11 +35,12 @@ public class SegundoParcial {
 		poliza.agregarBeneficiario(hijo, TipoDeBeneficiario.HIJO);
 		poliza.agregarBeneficiario(conyuge, TipoDeBeneficiario.CONYUGE);
 	
-		assertEquals(2, poliza.obtenerCantidadDeBeneficiarios())
-		assertEquals(asegurado, poliza.getAsegurado());
-		assertEquals(PREMIO, poliza.getPremio());
+		Integer valorEsperado = 2;
+		assertEquals(valorEsperado,((PolizaAccidentesPersonales)poliza).obtenerCantidadDeBeneficiarios());
+		assertEquals(asegurado, ((PolizaAccidentesPersonales)poliza).getAsegurado());
+		assertEquals(PREMIO, ((PolizaAccidentesPersonales)poliza).getPremio());
 	}
-	
+	/*
 	@Test
 	public void queSePuedaEmitirUnaPolizaDeCombinadoFamiliar() {
 		final Integer NUMERO_DE_POLIZA = 1;
